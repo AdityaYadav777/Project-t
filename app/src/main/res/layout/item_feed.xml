@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/baseline_person_24"
+        app:civ_border_color="#FF000000"
+
+        app:civ_border_width="1dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aditya Yadav"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-smallcaps"
+        android:id="@+id/myName"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Painter"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="38dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-condensed"
+        android:id="@+id/myType"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1100px"
+        android:layout_below="@id/myType"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="7dp"
+        android:id="@+id/myCard">
+
+     <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:src="@mipmap/ic_launcher"
+         android:scaleType="fitXY"
+         android:padding="10dp"
+         android:id="@+id/myFeedPost"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myCard"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_seach"
+        android:padding="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/myDesc"
+        android:text="klsdhjvmsjkdhsdfvnsdkblm,sdkfhnvbsdnkzbvjkdhjkdb dgjafhbfjhklasdgbhijklvhjusdhiklvbhjsd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_below="@+id/myDesc"
+        android:layout_margin="10dp"
+        android:background="#73000000"/>
+
+</RelativeLayout>

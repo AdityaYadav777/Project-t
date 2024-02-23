@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home"
+        android:id="@+id/homeFicon"
+        />
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Chat"
+        android:id="@+id/chatFicon"
+        android:icon="@drawable/baseline_chat_bubble_24"/>
+    <item
+     android:id="@+id/blankFrag"
+        android:title=""/>
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Feed"
+        android:id="@+id/feedFicon"
+        android:icon="@drawable/baseline_electric_bolt_24"/>
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Profile"
+        android:id="@+id/profileFicon"
+        android:icon="@drawable/baseline_person_outline_24"/>
+</menu>
