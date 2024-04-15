@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#b2eee6"
     tools:context=".fragments.feedFrag">
 
 
@@ -11,6 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/myFeedRec"
         tools:listitem="@layout/item_feed"/>
+
 
 
 </RelativeLayout>

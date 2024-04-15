@@ -5,9 +5,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/compWork"
-        android:icon="@drawable/baseline_add_home_work_24"
+     android:icon="@drawable/baseline_accessibility_new_24"
         android:title="Works"
         />
+
+
 
     <item
         android:layout_width="wrap_content"

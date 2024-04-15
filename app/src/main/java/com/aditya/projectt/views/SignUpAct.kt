@@ -1,4 +1,4 @@
-package com.aditya.projectt
+package com.aditya.projectt.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.aditya.projectt.databinding.ActivitySignUpBinding
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
+import com.google.firebase.messaging.FirebaseMessaging
 
 class SignUpAct : AppCompatActivity() {
     private  lateinit var binding:ActivitySignUpBinding
@@ -22,12 +24,12 @@ class SignUpAct : AppCompatActivity() {
 
 
         binding.gotoLogin.setOnClickListener {
-            startActivity(Intent(this,LoginAct::class.java))
+            startActivity(Intent(this, LoginAct::class.java))
 
         }
 
         binding.signUpBtn.setOnClickListener {
-//            val name = binding.getMyName.text.toString().trim()
+
             val email = binding.getMyEmail.text.toString().trim()
             val pass = binding.getMyPassword.text.toString().trim()
             val passConfirm = binding.getMyConfirmPassword.text.toString().trim()
@@ -36,8 +38,8 @@ class SignUpAct : AppCompatActivity() {
 
 
             if (pass != passConfirm) {
-                binding.getMyPassword.setError("Password Did not Match")
-                binding.getMyConfirmPassword.setError("Password Did not Match")
+                binding.getMyPassword.error = "Password Did not Match"
+                binding.getMyConfirmPassword.error = "Password Did not Match"
 
             } else {
 
@@ -54,7 +56,7 @@ class SignUpAct : AppCompatActivity() {
                                 binding.signUpBtn.visibility = View.VISIBLE
                                 binding.progressBar.visibility = View.GONE
                                 saveData()
-                                updateUI()
+//                                updateUI()
 
                             } else {
                                 binding.signUpBtn.visibility = View.VISIBLE
@@ -75,54 +77,66 @@ class SignUpAct : AppCompatActivity() {
     }
 
     private fun saveData() {
-        val db = Firebase.firestore
-        val myUid=FirebaseAuth.getInstance().uid.toString()
-        val name=binding.getMyName.text.toString().trim()
-        val email=binding.getMyEmail.text.toString().trim()
-        val pass=binding.getMyPassword.text.toString().trim()
+
+
+FirebaseMessaging.getInstance().token.addOnCompleteListener ( OnCompleteListener {task->
+
+
+  val  fcmToken=task.result
+
+    val db = Firebase.firestore
+    val myUid=FirebaseAuth.getInstance().uid.toString()
+    val name=binding.getMyName.text.toString().trim()
+    val email=binding.getMyEmail.text.toString().trim()
+    val pass=binding.getMyPassword.text.toString().trim()
 
 
 
-        val data = hashMapOf(
-            "name" to name,
-            "email" to email,
-            "password" to pass
-        )
+    val data = hashMapOf(
+        "name" to name,
+        "email" to email,
+        "password" to pass,
+        "tokenId" to fcmToken
+    )
 
+    db.collection("Users").document(myUid).set(data).addOnCompleteListener {
 
-        db.collection("Users").document(myUid).set(data).addOnCompleteListener {
-
-
-
-        }.addOnFailureListener {
-
+        if(it.isSuccessful){
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
+
+    }
+
+})
+
+
 
 
     }
 
     private fun updateUI() {
 
-startActivity(Intent(this,MainActivity::class.java))
+startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 
     fun checkData():Int{
 
         if(binding.getMyName.text.isEmpty()){
-            binding.getMyName.setError("Enter Name")
+            binding.getMyName.error = "Enter Name"
             return 0
         }
         if(binding.getMyEmail.text.isEmpty()){
-            binding.getMyEmail.setError("Enter Email")
+            binding.getMyEmail.error = "Enter Email"
             return 0
         }
         if(binding.getMyPassword.text.isEmpty()){
-            binding.getMyPassword.setError("Enter Password")
+            binding.getMyPassword.error = "Enter Password"
             return 0
         }
         if(binding.confirmPasswordPlaceholder.text.isEmpty()){
-            binding.getMyConfirmPassword.setError("Enter Confirm Password")
+            binding.getMyConfirmPassword.error = "Enter Confirm Password"
             return 0
         }
 

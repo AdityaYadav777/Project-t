@@ -20,6 +20,7 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp">
                 <RelativeLayout
+                    android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <ImageView
@@ -27,34 +28,40 @@
                         android:layout_height="24dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
+                        android:id="@+id/myMenu"
                         android:src="@drawable/baseline_dehaze_24" />
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="23dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
+                        android:id="@+id/edtProfile"
                         android:src="@drawable/baseline_mode_edit_outline_24" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profile_image"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="47dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         android:src="@mipmap/ic_launcher"
-                        app:civ_border_color="#F8E00C"
+                        app:civ_border_color="#FAD6D6"
                         app:civ_border_width="1dp" />
 
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_50sdp"
+                        android:layout_marginTop="40dp"
+                        android:layout_alignParentRight="true">
                     <TextView
                         android:id="@+id/proName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="155dp"
-                        android:layout_marginTop="50dp"
+
                         android:fontFamily="sans-serif-light"
                         android:text="Loading.."
                         android:textColor="@color/black"
@@ -66,11 +73,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/proName"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="2dp"
-                        android:background="#FAE89E"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@drawable/shape_dots"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:padding="2dp"
+                        android:padding="5dp"
                         android:shadowRadius="@integer/material_motion_duration_long_1"
                         android:text="Student"
                         android:textColor="@color/black"
@@ -80,7 +87,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/proType"
-                        android:layout_marginStart="155dp"
+
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="sans-serif-light"
                         android:text="Pre-Price:"
                         android:textColor="@color/black"
@@ -92,7 +100,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/proType"
-                        android:layout_marginStart="225dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginStart="70dp"
                         android:fontFamily="sans-serif-light"
                         android:text="5000"
                         android:textColor="@color/black"
@@ -103,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/proPrePrice"
-                        android:layout_marginStart="155dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="sans-serif-light"
                         android:text="One-Day/Rs:"
                         android:textColor="@color/black"
@@ -115,7 +124,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/proPrePrice"
-                        android:layout_marginStart="240dp"
+                        android:layout_marginStart="84dp"
+                        android:layout_marginBottom="7dp"
                         android:fontFamily="sans-serif-light"
                         android:text="100000"
                         android:textColor="@color/black"
@@ -126,9 +136,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/proOneDay"
-                        android:layout_marginStart="155dp"
+
                         android:fontFamily="sans-serif-light"
                         android:text="Experience:"
+                        android:layout_marginBottom="3dp"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -138,12 +149,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/proOneDay"
-                        android:layout_marginStart="240dp"
+                        android:layout_marginStart="80dp"
                         android:fontFamily="sans-serif-light"
                         android:text="1 Year"
+                        android:layout_marginBottom="3dp"
                         android:textColor="@color/black"
                         android:textSize="15sp"
                         android:textStyle="bold" />
+                    </RelativeLayout>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
@@ -152,20 +165,37 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/myProTabs"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/shape_seach"
+        android:layout_height="55dp"
+        app:itemIconTint="@color/black"
+      android:background="@drawable/shape_save"
         android:layout_below="@id/view1"
-        app:itemPaddingTop="2dp"
-        app:itemRippleColor="#FDAB01"
+        app:labelVisibilityMode="unlabeled"
+        android:layout_marginStart="10dp"
+       app:itemActiveIndicatorStyle="@style/custom_bar"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         app:itemTextColor="#090909"
-        app:menu="@menu/pro_tbs" />
+        app:menu="@menu/pro_tbs" >
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="60dp"
+           android:layout_gravity="center"
+            android:background="#1F000000"/>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/myProTabs"
+        android:layout_above="@+id/don"
         android:id="@+id/proFrame"/>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/don"/>
 
 </RelativeLayout>

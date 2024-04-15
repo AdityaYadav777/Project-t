@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7FDFD"
+    tools:context=".views.ProfileSetupActivity">
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    &#xA;        app:boxStrokeErrorColor=&quot;@color/red&quot;&#xA;        app:hintTextColor=&quot;@color/red&quot;&#xA;        app:boxCornerRadiusBottomEnd=&quot;15dp&quot;&#xA;        app:boxStrokeColor=&quot;@color/black&quot;" />
+
+    <RelativeLayout
+       android:layout_width="match_parent"
+       android:id="@+id/view1"
+       android:layout_height="230dp">
+       <androidx.cardview.widget.CardView
+           android:layout_width="match_parent"
+          android:layout_marginBottom="20dp"
+           android:layout_marginTop="-19dp"
+           app:cardCornerRadius="15dp"
+           android:elevation="33dp"
+           android:layout_height="match_parent">
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="match_parent"
+                   android:background="@color/red"
+                   android:layout_height="match_parent">
+
+
+                   <ImageView
+                       android:id="@+id/backBtn"
+                       android:layout_width="@dimen/_20sdp"
+                       android:layout_height="@dimen/_30sdp"
+                       android:layout_marginStart="14dp"
+                       android:rotationY="2340"
+                       android:src="@drawable/baseline_arrow_forward_24"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintVertical_bias="0.084" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Edit Profile"
+                       android:textSize="18sp"
+                       android:textColor="@color/white"
+                       android:textStyle="bold"
+
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintHorizontal_bias="0.504"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintVertical_bias="0.138" />
+
+                   <de.hdodenhof.circleimageview.CircleImageView
+                       android:id="@+id/profile_image"
+                       android:layout_width="@dimen/_95sdp"
+                       android:layout_height="@dimen/_95sdp"
+                       android:layout_centerHorizontal="true"
+                       android:src="@drawable/baseline_person_24"
+                       app:civ_border_color="#FFFFFF"
+                       app:civ_border_width="2px"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintVertical_bias="0.714" />
+
+                   <ImageView
+                       android:id="@+id/addPhoto"
+                       android:layout_width="20dp"
+                       android:layout_height="25dp"
+                       android:background="@drawable/shape_seach"
+                       android:src="@drawable/baseline_add_24"
+                       app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+                       app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                       app:layout_constraintHorizontal_bias="0.912"
+                       app:layout_constraintStart_toStartOf="@+id/profile_image"
+                       app:layout_constraintTop_toTopOf="@+id/profile_image"
+                       app:layout_constraintVertical_bias="1.0"
+                       app:tint="@color/red" />
+
+                   <ProgressBar
+                       android:id="@+id/progressBar5"
+                       style="?android:attr/progressBarStyle"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:visibility="gone"
+                       android:layout_centerHorizontal="true"
+                       app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+                       app:layout_constraintEnd_toEndOf="@+id/profile_image"
+                       app:layout_constraintStart_toStartOf="@+id/profile_image"
+                       app:layout_constraintTop_toTopOf="@+id/profile_image" />
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentRight="true"
+                   android:layout_marginTop="20dp"
+                   android:layout_marginEnd="10dp"
+                   android:background="@drawable/shape_save"
+                   android:visibility="gone"
+                   android:padding="5dp"
+                   android:shadowRadius="10"
+                   android:text="Save"
+                   android:textColor="#FF0000"
+                   android:textSize="15sp"
+                   android:textStyle="bold" />
+           </RelativeLayout>
+       </androidx.cardview.widget.CardView>
+   </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+       android:layout_marginBottom="@dimen/_7sdp"
+        android:layout_below="@id/view1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="360dp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_centerHorizontal="true"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusBottomEnd="15dp"
+        android:id="@+id/proName"
+        android:textColorHint="#7E7D7D"
+        app:placeholderTextColor="@color/red"
+        app:helperTextTextColor="@color/red"
+        app:boxStrokeErrorColor="@color/red"
+        app:hintTextColor="@color/red"
+        app:boxStrokeColor="@color/black"
+        android:layout_marginBottom="@dimen/_21sdp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:id="@+id/proName1"
+            android:hint="Name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="360dp"
+                android:id="@+id/proProfession"
+                android:layout_below="@+id/proName"
+                android:hint="Profession"
+                android:background="@color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="10dp"
+              app:boxCornerRadiusBottomEnd="15dp"
+                app:boxCornerRadiusBottomStart="15dp"
+                app:boxCornerRadiusTopEnd="15dp"
+                app:boxCornerRadiusTopStart="15dp"
+                app:boxStrokeErrorColor="@color/red"
+                app:hintTextColor="@color/red"
+                app:placeholderTextColor="@color/red"
+                app:helperTextTextColor="@color/red"
+                app:boxStrokeColor="@color/black"
+android:textColorHint="@color/black"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/proProfession1"
+                    android:layout_width="match_parent"
+                    android:backgroundTint="@color/white"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="360dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="@dimen/_21sdp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:id="@+id/proProfession"-->
+<!--        app:boxCornerRadiusTopStart="15dp"-->
+<!--        app:boxCornerRadiusTopEnd="15dp"-->
+<!--        app:boxStrokeColor="@color/black"-->
+<!--        app:boxCornerRadiusBottomStart="15dp"-->
+<!--        app:placeholderTextColor="@color/red"-->
+<!--        app:helperTextTextColor="@color/red"-->
+<!--        app:boxStrokeErrorColor="@color/red"-->
+<!--        app:hintTextColor="@color/red"-->
+<!--        android:textColorHint="#7E7D7D"-->
+
+<!--        app:boxCornerRadiusBottomEnd="15dp"-->
+<!--        android:layout_below="@+id/proName">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:inputType="text"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:id="@+id/proProfession1"-->
+<!--            android:textColorHint="#f91717"-->
+<!--            android:hint="Profession/Your Work" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/proPrePrice"
+      android:textColorHint="#7E7D7D"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:placeholderTextColor="@color/red"
+        app:helperTextTextColor="@color/red"
+        android:layout_marginBottom="@dimen/_21sdp"
+        android:layout_marginTop="@dimen/_21sdp"
+
+        app:boxStrokeErrorColor="@color/red"
+        app:hintTextColor="@color/red"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:boxStrokeColor="@color/black"
+        android:layout_below="@+id/proProfession">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/proPrePrice1"
+            android:inputType="numberDecimal"
+            android:textColor="@color/black"
+            android:textColorHint="#7E7D7D"
+            android:hint="Pre-Prise" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="360dp"
+        android:layout_marginBottom="@dimen/_21sdp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/oneDayPrice"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:placeholderTextColor="@color/red"
+        app:helperTextTextColor="@color/red"
+        app:boxStrokeErrorColor="@color/red"
+        app:hintTextColor="@color/red"
+        android:textColorHint="#7E7D7D"
+        app:boxStrokeColor="@color/black"
+        android:layout_below="@+id/proPrePrice">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:id="@+id/oneDayPrice1"
+            android:textColor="@color/black"
+            android:hint="One-Day Prise" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/proExperience"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:placeholderTextColor="@color/red"
+        app:helperTextTextColor="@color/red"
+        app:boxStrokeErrorColor="@color/red"
+        app:hintTextColor="@color/red"
+        android:layout_marginBottom="@dimen/_21sdp"
+        android:textColorHint="#7E7D7D"
+        app:boxStrokeColor="@color/black"
+        android:layout_below="@+id/oneDayPrice">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/proExperience1"
+            android:maxLength="2"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:maxEms="2"
+            android:inputType="numberDecimal"
+            android:hint="Experience" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_21sdp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/proAge"
+        app:counterMaxLength="2"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:placeholderTextColor="@color/red"
+        app:helperTextTextColor="@color/red"
+        app:boxStrokeErrorColor="@color/red"
+        android:textColorHint="#7E7D7D"
+        app:hintTextColor="@color/red"
+        app:boxStrokeColor="@color/black"
+        android:layout_below="@+id/proExperience">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:maxEms="2"
+            android:textColor="@color/black"
+            android:id="@+id/proAge1"
+            android:maxLength="2"
+            android:hint="Age" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:boxCornerRadiusTopStart="15dp"
+        app:boxCornerRadiusTopEnd="15dp"
+        app:boxCornerRadiusBottomStart="15dp"
+        app:boxCornerRadiusBottomEnd="15dp"
+        app:boxStrokeColor="@color/black"
+        android:textColorHint="#7E7D7D"
+        android:id="@+id/proPlace"
+        app:placeholderTextColor="@color/red"
+        app:helperTextTextColor="@color/red"
+        app:boxStrokeErrorColor="@color/red"
+        app:hintTextColor="@color/red"
+        android:layout_below="@+id/proAge">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:id="@+id/proPlace1"
+            android:hint="Place/Home" />
+    </com.google.android.material.textfield.TextInputLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/shape_back_for_nav"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_19sdp"
+                android:text="SAVE"
+                android:id="@+id/saveBtn"
+                android:layout_below="@+id/proPlace"
+                android:textColor="@color/white"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

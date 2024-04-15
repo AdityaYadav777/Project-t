@@ -20,7 +20,7 @@ lateinit var binding:FragmentFeedBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding=FragmentFeedBinding.inflate(layoutInflater,container,false)
         val db=Firebase.firestore
@@ -32,17 +32,20 @@ lateinit var binding:FragmentFeedBinding
             val listOfFeeds= arrayListOf<myFeedData>()
             val data=value?.toObjects(myFeedData::class.java)
             listOfFeeds.addAll(data!!)
-            if (isAdded){
-                binding.myFeedRec.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
-                binding.myFeedRec.adapter=myFeedAdapter(requireContext(),listOfFeeds)
-            }
+
+if (isAdded) {
 
 
+    binding.myFeedRec.layoutManager =
+        LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+    binding.myFeedRec.adapter = myFeedAdapter(requireContext(), listOfFeeds)
+}
         }
 
 
         return binding.root
     }
+
 
 }
 
